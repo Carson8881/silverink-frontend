@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Silver Ink | Process &amp; Digital Journey</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Hanken+Grotesk:wght@600;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-container": "#00375a",
+                        "on-tertiary-fixed": "#0b1c30",
+                        "primary-container": "#00a3ff",
+                        "background": "#101415",
+                        "inverse-surface": "#e0e3e5",
+                        "on-error-container": "#ffdad6",
+                        "inverse-on-surface": "#2d3133",
+                        "surface-container-high": "#272a2c",
+                        "on-primary": "#003354",
+                        "tertiary-container": "#8e9eb6",
+                        "on-secondary-fixed": "#131b2e",
+                        "on-secondary-fixed-variant": "#3f465c",
+                        "outline": "#88919d",
+                        "surface-container": "#1d2022",
+                        "on-secondary": "#283044",
+                        "secondary-fixed-dim": "#bec6e0",
+                        "surface-tint": "#98cbff",
+                        "tertiary-fixed-dim": "#b7c8e1",
+                        "surface": "#101415",
+                        "primary": "#98cbff",
+                        "primary-fixed-dim": "#98cbff",
+                        "surface-container-lowest": "#0b0f10",
+                        "on-secondary-container": "#adb4ce",
+                        "outline-variant": "#3f4852",
+                        "secondary": "#bec6e0",
+                        "tertiary": "#b7c8e1",
+                        "surface-container-low": "#191c1e",
+                        "surface-dim": "#101415",
+                        "surface-variant": "#323537",
+                        "on-tertiary-fixed-variant": "#38485d",
+                        "surface-bright": "#363a3b",
+                        "primary-fixed": "#cfe5ff",
+                        "on-surface-variant": "#bec7d4",
+                        "on-background": "#e0e3e5",
+                        "on-tertiary": "#213145",
+                        "on-tertiary-container": "#253549",
+                        "on-primary-fixed": "#001d33",
+                        "on-surface": "#e0e3e5",
+                        "secondary-container": "#3f465c",
+                        "on-error": "#690005",
+                        "on-primary-fixed-variant": "#004a77",
+                        "secondary-fixed": "#dae2fd",
+                        "error": "#ffb4ab",
+                        "tertiary-fixed": "#d3e4fe",
+                        "inverse-primary": "#00629d",
+                        "surface-container-highest": "#323537",
+                        "error-container": "#93000a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "unit": "8px",
+                        "section-padding-sm": "64px",
+                        "margin-mobile": "20px",
+                        "container-max": "1280px",
+                        "section-padding-lg": "120px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Hanken Grotesk"],
+                        "body-md": ["Inter"],
+                        "display-lg": ["Hanken Grotesk"],
+                        "display-lg-mobile": ["Hanken Grotesk"],
+                        "label-caps": ["JetBrains Mono"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0em", "fontWeight": "400"}],
+                        "headline-md": ["32px", {"lineHeight": "1.3", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "letterSpacing": "0em", "fontWeight": "400"}],
+                        "display-lg": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                        "display-lg-mobile": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "500"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #101415;
+            color: #e0e3e5;
+            overflow-x: hidden;
+        }
+        .glass-card {
+            background: rgba(29, 32, 34, 0.4);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card:hover {
+            border-color: rgba(152, 203, 255, 0.3);
+            box-shadow: 0 0 40px -10px rgba(0, 163, 255, 0.15);
+        }
+        .timeline-line {
+            background: linear-gradient(to bottom, #98cbff 0%, transparent 100%);
+            width: 2px;
+        }
+        .electric-glow {
+            filter: drop-shadow(0 0 8px #98cbff);
+        }
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+        .floating-shape {
+            animation: float 8s ease-in-out infinite;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Mobile Navigation */
+        #mobile-menu {
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            inset: 0;
+            z-index: 40;
+            background: rgba(16, 20, 21, 0.97);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            padding-top: 6rem;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+            transform: translateX(100%);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        @media (min-width: 768px) { #mobile-menu { display: none !important; } }
+        #mobile-menu.open { transform: translateX(0); }
+        #mobile-menu a { font-size: 2rem; font-weight: 700; padding: 1.25rem 0; border-bottom: 1px solid rgba(63, 72, 82, 0.6); color: #e0e3e5; text-decoration: none; transition: color 0.2s; }
+        #mobile-menu a:hover { color: #98cbff; }
+    </style>
+</head>
+<body class="selection:bg-primary-container selection:text-on-primary-container">
+<nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-white/10 shadow-sm">
+<div class="flex justify-between items-center max-w-container-max mx-auto px-margin-mobile md:px-gutter h-20">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-3xl">fluid</span>
+<span class="font-headline-md text-headline-md font-bold text-primary tracking-tighter" href="/">Silver Ink</a>
+</div>
+<div class="hidden md:flex gap-unit*4 items-center">
+<a class="font-body-lg text-body-lg text-on-surface-variant hover:text-primary transition-colors px-4" href="/services.html">Services</a>
+<a class="font-body-lg text-body-lg text-on-surface-variant hover:text-primary transition-colors px-4" href="/portfolio.html">Portfolio</a>
+<a class="font-body-lg text-body-lg text-primary font-semibold border-b-2 border-primary pb-1 px-4" href="/process.html">Process</a>
+<button class="ml-4 bg-primary text-on-primary px-6 py-2 rounded-lg font-body-lg font-semibold hover:opacity-80 transition-all active:scale-95 duration-300">
+                    Get Started
+                </button>
+</div>
+<button id="menu-toggle" class="md:hidden w-10 h-10 flex items-center justify-center text-on-surface rounded-lg hover:bg-surface-container transition-colors" aria-label="Open menu">
+<span class="material-symbols-outlined" id="menu-icon">menu</span>
+</button>
+</div>
+</nav>
+<!-- Mobile Navigation -->
+<div id="mobile-menu">
+<a href="/services.html">Services</a>
+<a href="/portfolio.html">Portfolio</a>
+<a href="/process.html">Process</a>
+<button style="margin-top:2rem;background:#98cbff;color:#003354;font-weight:700;padding:1rem 2rem;border-radius:0.75rem;font-size:1.125rem;width:100%;border:none;cursor:pointer;">Get Started</button>
+</div>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative py-section-padding-lg overflow-hidden">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter text-center">
+<span class="font-label-caps text-label-caps text-primary uppercase tracking-widest mb-6 block">The Blueprint of Excellence</span>
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface mb-8">
+                    From Vision to <span class="text-primary italic">Inked</span> Reality.
+                </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-12">
+                    Our architectural approach to digital design ensures every pixel serves a purpose. Experience a process refined through precision and technical mastery.
+                </p>
+<div class="flex justify-center gap-4">
+<div class="w-12 h-12 rounded-full border border-outline-variant flex items-center justify-center animate-bounce">
+<span class="material-symbols-outlined text-primary">expand_more</span>
+</div>
+</div>
+</div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[120px] -z-10"></div>
+</section>
+<!-- Our Process / Timeline -->
+<section class="py-section-padding-lg bg-surface-container-lowest relative">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+<div class="flex flex-col md:flex-row justify-between items-end mb-24 gap-8">
+<div class="max-w-xl">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-4">Our Process</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                            A systematic flow designed to minimize friction and maximize technical superiority at every stage of the lifecycle.
+                        </p>
+</div>
+<div class="font-label-caps text-label-caps text-on-surface-variant flex items-center gap-2">
+<span class="w-12 h-[1px] bg-outline-variant"></span>
+                        STEP-BY-STEP REVEAL
+                    </div>
+</div>
+<div class="relative">
+<div class="absolute left-8 md:left-1/2 top-0 bottom-0 timeline-line -translate-x-1/2 hidden md:block"></div>
+<div class="space-y-32">
+<div class="relative flex flex-col md:flex-row items-center gap-12 group">
+<div class="md:w-1/2 flex justify-end">
+<div class="glass-card p-8 rounded-xl max-w-md w-full relative z-10">
+<span class="font-label-caps text-label-caps text-primary mb-2 block">01 / DISCOVERY</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-4">Deep Extraction</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                                        We dive deep into your business ecosystem to extract core requirements and define the visionary roadmap that guides the entire project.
+                                    </p>
+</div>
+</div>
+<div class="absolute left-8 md:left-1/2 -translate-x-1/2 w-4 h-4 bg-primary rounded-full electric-glow z-20"></div>
+<div class="md:w-1/2">
+<div class="w-full h-64 rounded-xl overflow-hidden glass-card">
+<img class="w-full h-full object-cover opacity-60 grayscale hover:grayscale-0 transition-all duration-700" alt="Design strategy session" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgtTNlO85DDSv0E9nL3ZetqJOoNQpgMBEb3McQ501akHKp4nHk71rYPY3zgGTXt7JpI2MCsjGCRUwmFnph44D5RCrzJegdIhgAUKs0U5GZKgAemurkR9pOyaEs8h9zGXbCVNITHDLt0-q6T7PMRptOD7rL9O593ydujp337P0_4UlcLpvjGN5hC-uawrRSJ-seIuTJ8j-2RqFVn26R0tC5f_MFC5ALoUhGsOra424ZHlb-OnF2KN9vR-3RZzvIyUJNlS25Nps3HtPh"/>
+</div>
+</div>
+</div>
+<div class="relative flex flex-col md:flex-row-reverse items-center gap-12 group">
+<div class="md:w-1/2 flex justify-start">
+<div class="glass-card p-8 rounded-xl max-w-md w-full relative z-10">
+<span class="font-label-caps text-label-caps text-primary mb-2 block">02 / ARCHITECTURE</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-4">Technical Blueprinting</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                                        Our architects map out the technical infrastructure and user experience flow, ensuring a solid foundation for scale and performance.
+                                    </p>
+</div>
+</div>
+<div class="absolute left-8 md:left-1/2 -translate-x-1/2 w-4 h-4 bg-primary rounded-full electric-glow z-20"></div>
+<div class="md:w-1/2">
+<div class="w-full h-64 rounded-xl overflow-hidden glass-card">
+<img class="w-full h-full object-cover opacity-60 grayscale hover:grayscale-0 transition-all duration-700" alt="Technical blueprint wireframe" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPQIgYW2Uh_qTqlZwDP5CvBB-nY9fURoY82HRfKo4c1tgbn6ZP-Q1jl_mFZ21hpwR0MVVOHY8EKOMlEb9pwuKptepTph1xs7knSdblOtzLh7-BNjvzsyqgzss41UxHttLUUR4aL6cGJ51inRbuQ5Z_twe5Yp69pRw9-_KBVqDFIw-5TCfpxJ32HoZKH4N22YqlaNw5tp1yoUu3hAa4zhuIRDlr2p-8JNXaIv06NaZwzxaWL-vtacc_k8WwEry7JBev9ZKHQ3o5MgTN"/>
+</div>
+</div>
+</div>
+<div class="relative flex flex-col md:flex-row items-center gap-12 group">
+<div class="md:w-1/2 flex justify-end">
+<div class="glass-card p-8 rounded-xl max-w-md w-full relative z-10">
+<span class="font-label-caps text-label-caps text-primary mb-2 block">03 / CRAFTSMANSHIP</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-4">Precision Inking</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                                        Where the art meets the code. We build with extreme attention to detail, utilizing glassmorphism and electric accents to create elite interfaces.
+                                    </p>
+</div>
+</div>
+<div class="absolute left-8 md:left-1/2 -translate-x-1/2 w-4 h-4 bg-primary rounded-full electric-glow z-20"></div>
+<div class="md:w-1/2">
+<div class="w-full h-64 rounded-xl overflow-hidden glass-card">
+<img class="w-full h-full object-cover opacity-60 grayscale hover:grayscale-0 transition-all duration-700" alt="Development workstation" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqqNoagjpsE1cBAbYt2Mq6xSXeU8Oh2yu-i8p3TB4xKUjo_I8OH7-yMZ7BucYpsFW9ktZZcvuoGAhm5KZTJLPREW1xkM494BhbqCie2ys7tzGZX1YksAyfw-shY9n-n5Bql8vsAnAk2uApXdGFDi2b37qODO9UyB-fBEyTXtVMPb6ww1pdo3lEVIePLrXBwsMPDRFqdruqAmIGQkViwWWda8MXZWrg2gNLL7MXHW00-4jCkI27zQ6KLmGlUopTqnTRQCXarm5GRVXJ"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials Carousel -->
+<section class="py-section-padding-lg overflow-hidden">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter mb-16">
+<h2 class="font-headline-md text-headline-md text-on-surface">Trusted by Visionaries</h2>
+</div>
+<div class="flex gap-gutter px-margin-mobile md:px-gutter overflow-x-auto hide-scrollbar snap-x snap-mandatory" id="testimonial-track">
+<div class="min-w-[320px] md:min-w-[450px] snap-center">
+<div class="glass-card p-10 rounded-xl h-full flex flex-col justify-between">
+<div>
+<div class="flex text-primary mb-6">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface mb-8">
+                                "The technical depth and precision Silver Ink brought to our project was unmatched. They transformed our chaotic vision into a structured, high-performing digital platform."
+                            </p>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center text-primary font-bold">KO</div>
+<div>
+<h4 class="font-body-md font-bold text-on-surface">Kwame Owusu</h4>
+<p class="font-label-caps text-on-surface-variant">Founder, TechGhana Hub</p>
+</div>
+</div>
+</div>
+</div>
+<div class="min-w-[320px] md:min-w-[450px] snap-center">
+<div class="glass-card p-10 rounded-xl h-full flex flex-col justify-between">
+<div>
+<div class="flex text-primary mb-6">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface mb-8">
+                                "Their attention to the 'small details' like glassmorphism and motion design elevated our brand to an international level. Absolutely elite partner."
+                            </p>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center text-primary font-bold">SA</div>
+<div>
+<h4 class="font-body-md font-bold text-on-surface">Sarah Adjei</h4>
+<p class="font-label-caps text-on-surface-variant">CTO, Luminova Systems</p>
+</div>
+</div>
+</div>
+</div>
+<div class="min-w-[320px] md:min-w-[450px] snap-center">
+<div class="glass-card p-10 rounded-xl h-full flex flex-col justify-between">
+<div>
+<div class="flex text-primary mb-6">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface mb-8">
+                                "Working with Silver Ink is like working with an architectural firm for the web. Everything is measured, purposeful, and strikingly beautiful."
+                            </p>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center text-primary font-bold">EM</div>
+<div>
+<h4 class="font-body-md font-bold text-on-surface">Emmanuel Mensah</h4>
+<p class="font-label-caps text-on-surface-variant">Product Head, GoldCoast Fintech</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Carousel Controls -->
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter mt-12 flex gap-4">
+<button class="w-12 h-12 rounded-full border border-outline-variant flex items-center justify-center hover:bg-primary/10 transition-colors" onclick="document.getElementById('testimonial-track').scrollBy({left: -400, behavior: 'smooth'})">
+<span class="material-symbols-outlined text-primary">chevron_left</span>
+</button>
+<button class="w-12 h-12 rounded-full border border-outline-variant flex items-center justify-center hover:bg-primary/10 transition-colors" onclick="document.getElementById('testimonial-track').scrollBy({left: 400, behavior: 'smooth'})">
+<span class="material-symbols-outlined text-primary">chevron_right</span>
+</button>
+</div>
+</section>
+<!-- Final CTA Section -->
+<section class="py-section-padding-lg relative overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-full -z-10 pointer-events-none">
+<div class="floating-shape absolute top-1/4 right-[10%] w-64 h-64 border border-primary/20 rounded-full blur-xl opacity-30"></div>
+<div class="floating-shape absolute bottom-1/4 left-[5%] w-96 h-96 border border-primary/10 rounded-[40px] rotate-45 blur-2xl opacity-20" style="animation-delay: 2s"></div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter text-center relative z-10">
+<div class="glass-card py-20 px-8 md:px-24 rounded-3xl border-primary/20 bg-primary/5">
+<h2 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface mb-8">
+                        Start Your <span class="text-primary">Digital Journey</span> Today.
+                    </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mx-auto mb-12">
+                        Ready to elevate your digital presence with world-class engineering and architectural design? Let's build something visionary.
+                    </p>
+<div class="flex flex-col sm:flex-row justify-center gap-6">
+<button class="bg-primary text-on-primary px-10 py-4 rounded-lg font-body-lg font-bold hover:scale-105 transition-transform duration-300 shadow-[0_0_20px_rgba(152,203,255,0.4)]">
+                            Launch Project
+                        </button>
+<button class="bg-transparent border border-outline text-on-surface px-10 py-4 rounded-lg font-body-lg font-bold hover:bg-surface-variant transition-colors duration-300">
+                            Book a Strategy Call
+                        </button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-section-padding-sm md:py-section-padding-lg bg-surface-container-lowest border-t border-outline-variant">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+<div class="col-span-1 md:col-span-2">
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-primary text-3xl">fluid</span>
+<span class="font-headline-md text-headline-md font-bold text-on-surface">Silver Ink</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-sm mb-8">
+                    Premium digital agency bridging the gap between technical architecture and visionary design. Based in Accra, serving the world.
+                </p>
+</div>
+<div class="flex flex-col gap-4">
+<h5 class="font-label-caps text-label-caps text-on-surface font-bold uppercase mb-2">Navigation</h5>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="/services.html">Services</a>
+<a class="font-body-md text-body-md text-primary" href="/portfolio.html">Portfolio</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="/process.html">Process</a>
+</div>
+<div class="flex flex-col gap-4">
+<h5 class="font-label-caps text-label-caps text-on-surface font-bold uppercase mb-2">Legal</h5>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a>
+<div class="mt-4 flex gap-4 text-on-surface-variant">
+<span class="material-symbols-outlined hover:text-primary cursor-pointer">language</span>
+<span class="material-symbols-outlined hover:text-primary cursor-pointer">alternate_email</span>
+</div>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter mt-16 pt-8 border-t border-outline-variant/30 flex justify-between items-center text-on-surface-variant font-body-md">
+<span>© 2024 Silver Ink Digital. Built for Visionaries.</span>
+<div class="flex gap-6">
+<span>Accra</span>
+<span class="text-outline-variant">|</span>
+<span>London</span>
+</div>
+</div>
+</footer>
+<script>
+        // Simple Intersection Observer for scroll-reveal animations
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-12');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.glass-card').forEach(card => {
+            card.classList.add('opacity-0', 'translate-y-12', 'transition-all', 'duration-1000');
+            observer.observe(card);
+        });
+
+        // Floating elements subtle parallax
+        window.addEventListener('mousemove', (e) => {
+            const shapes = document.querySelectorAll('.floating-shape');
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+            
+            shapes.forEach((shape, index) => {
+                const speed = (index + 1) * 20;
+                shape.style.transform = `translate(${x * speed}px, ${y * speed}px) rotate(${x * 10}deg)`;
+            });
+        });
+
+        // Mobile menu toggle
+        (function() {
+            var toggle = document.getElementById('menu-toggle');
+            var menu = document.getElementById('mobile-menu');
+            var icon = document.getElementById('menu-icon');
+            if (!toggle || !menu) return;
+            toggle.addEventListener('click', function() {
+                var open = menu.classList.contains('open');
+                menu.classList.toggle('open');
+                if (icon) icon.textContent = open ? 'menu' : 'close';
+                document.body.style.overflow = open ? '' : 'hidden';
+            });
+            menu.querySelectorAll('a, button').forEach(function(el) {
+                el.addEventListener('click', function() {
+                    menu.classList.remove('open');
+                    if (icon) icon.textContent = 'menu';
+                    document.body.style.overflow = '';
+                });
+            });
+        })();
+    </script>
+</body></html>
