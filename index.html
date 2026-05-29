@@ -177,12 +177,27 @@
             transform: translateY(0);
         }
 
-        /* Sticky Glass Header */
-        header.scrolled {
-            background: rgba(255, 255, 255, 0.92);
-            backdrop-filter: blur(20px);
-            border-bottom-color: rgba(0, 0, 0, 0.08);
+        /* Header — default state */
+        .header-brand { color: #0d1b2a; }
+        #main-header nav a:not([class*="bg-"]) { color: #0d1b2a; }
+        #main-header nav a:not([class*="bg-"]),
+        #main-header .header-brand,
+        #main-header button#menu-toggle {
+            transition: color 0.45s cubic-bezier(0.4, 0, 0.2, 1);
         }
+
+        /* Header — scrolled state */
+        header.scrolled {
+            background: #0d0d0d !important;
+            border-color: transparent !important;
+            box-shadow: none;
+        }
+        header.scrolled .header-brand,
+        header.scrolled nav a:not([class*="bg-primary"]),
+        header.scrolled button#menu-toggle {
+            color: #ffffff !important;
+        }
+        header.scrolled .nav-link::after { background: #ffffff; }
 
         /* Mobile Navigation */
         #mobile-menu {
@@ -207,10 +222,10 @@
     </style>
 </head>
 <body class="bg-background text-on-surface selection:bg-blue-100 font-body-md overflow-x-hidden">
-<header class="fixed top-0 w-full z-50 bg-transparent border-b border-transparent transition-all duration-500" id="main-header">
+<header class="fixed top-0 w-full z-50 bg-white border-b border-black/8 transition-all duration-500" id="main-header">
 <nav class="flex justify-between items-center max-w-container-max mx-auto px-margin-mobile md:px-gutter h-20">
 <div class="flex items-center gap-2">
-<a href="/" class="font-headline-md text-headline-md font-bold text-primary tracking-tighter">Silver Ink</a>
+<a href="/" class="font-headline-md text-headline-md font-bold tracking-tighter header-brand">Silver Ink</a>
 </div>
 <div class="hidden md:flex items-center gap-8">
 <a class="font-body-lg text-body-lg text-primary font-semibold nav-link nav-link-active" href="/services.html">Services</a>
